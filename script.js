@@ -166,7 +166,7 @@ style="
   width: ${calculate(WIDTH.coding_cat) + "px"};
   height: ${calculate(HEIGHT.coding_cat) + "px"};
   border-radius: ${calculate(BORDER_RADIUS_ALL.coding_cat) + "px"};
-  display: block;
+  display: none;
 "
 >
 <div
@@ -433,7 +433,7 @@ style="
   width: ${calculate(WIDTH.coding_cat) + "px"};
   height: ${calculate(HEIGHT.coding_cat) + "px"};
   border-radius: ${calculate(BORDER_RADIUS_ALL.coding_cat) + "px"};
-  display: none;
+  display: block;
 "
 >
 <div
@@ -701,11 +701,11 @@ const coding_cat = cat.querySelector(".coding_cat");
 // ẩn/hiện animation khi click checkbox
 checkBox.addEventListener("click", function () {
   if (checkBox.checked) {
-    sleeping_cat.style.display = "none";
-    coding_cat.style.display = "block";
-  } else {
     sleeping_cat.style.display = "block";
     coding_cat.style.display = "none";
+  } else {
+    sleeping_cat.style.display = "none";
+    coding_cat.style.display = "block";
   }
 });
 
@@ -743,7 +743,7 @@ const blinkKeyframes = [
 const blinkAnimaOptions = {
   duration: 3000,
   iterations: Infinity,
-  easing: "linear",
+  easing: "ease-out",
 };
 
 typingEye.animate(blinkKeyframes, blinkAnimaOptions);
@@ -774,7 +774,7 @@ const rightHandKeyFrames = [
 ];
 
 const typeAnimaOptions = {
-  duration: 750,
+  duration: 500,
   iterations: Infinity,
   easing: "linear",
 };
